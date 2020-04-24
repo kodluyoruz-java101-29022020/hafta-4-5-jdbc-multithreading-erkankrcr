@@ -11,8 +11,10 @@ import db.connection.mysql.connection.dao.DepartmentDAO;
 import db.connection.mysql.connection.dao.EmployeeDAO;
 import db.connection.mysql.connection.dao.ManagerDAO;
 import db.connection.mysql.connection.dao.SalaryDAO;
+import db.connection.mysql.connection.model.Department;
 import db.connection.mysql.connection.model.Employee;
 import db.connection.mysql.connection.model.EmployeeProfile;
+import db.connection.mysql.connection.model.Manager;
 import db.connection.mysql.connection.service.DepartmentService;
 import db.connection.mysql.connection.service.EmployeeService;
 import db.connection.mysql.connection.service.ManagerService;
@@ -72,10 +74,14 @@ public class Application {
 					System.out.println();
 					break;
 				case 7:
+					//Yapıldı
 					// burada aktif yöneticileri listeleyen bir fonksiyon yazmalısınız.
+					listActiveManagers(managerService);
 					break;
 				case 8:
+					//Yapıldı
 					// burada tüm departmanları listeleyiniz.
+					listDepartments(departmentService);
 					break;
 				case 9:
 					draftEmployeeProfileOperations(employeeService, salaryService);
@@ -208,15 +214,26 @@ public class Application {
 			System.out.println(empNo + " ID'li çalışan silinmiştir!");
 		}
 	}
-	
+
+	//Yapıldı
 	public static void listActiveManagers(ManagerService managerService) {
-		
+
+		for(Manager manager : managerService.activeManagerList()){
+			System.out.println(
+					"Sorumlu olduğu Departman Adı : "+manager.getDepartmentName()
+							+", Yöneticinin Numarası : "+manager.getEmployee().getId()
+							+", Yöneticinin İsmi : "+manager.getEmployee().getName()
+							+", Yöneticinin Soyismi : "+manager.getEmployee().getLastName());
+		}
 		// Burada ManagerService üzerinden aktif yöneticilerin listesini çekiniz ve ekrana yazdırınız
 		
 	}
-	
+
+	//Yapıldı
 	public static void listDepartments(DepartmentService departmentService) {
-		
+		for(Department department : departmentService.allDepartment()){
+			System.out.println("Departman Numarası : "+department.getDeptNo()+", Departman Adı : "+department.getName());
+		}
 		// Burada tğm departmanları listeleyen ve ekrana gösteren kodu yazınız.
 	}
 	

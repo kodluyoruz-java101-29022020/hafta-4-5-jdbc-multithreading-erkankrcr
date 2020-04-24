@@ -9,7 +9,7 @@ public class MongoDbConnection {
 	public static MongoClient getMongoDbConnection() {
 		
 		if(mongoClient == null) {
-			mongoClient = new MongoClient("localhost", 27017);
+			mongoClient = new MongoClient("192.168.1.138", 27017);
 		}
 		return mongoClient;
 	}

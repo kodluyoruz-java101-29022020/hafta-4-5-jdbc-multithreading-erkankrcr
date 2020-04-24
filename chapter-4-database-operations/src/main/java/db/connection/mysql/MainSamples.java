@@ -93,7 +93,7 @@ public class MainSamples {
 		employeeDAO.saveAll(employeesBulk);
 		
 		DbConnection.getDbConnection().close();
-		MongoDbConnection.getMongoDbConnection().close();
+		//MongoDbConnection.getMongoDbConnection().close();
 	}
 	
 	private static void printEmployeeList(Set<Employee> employees) {

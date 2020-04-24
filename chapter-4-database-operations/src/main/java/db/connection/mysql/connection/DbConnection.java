@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class DbConnection {
 
-	private final static String dbHost = "jdbc:mysql://remotemysql.com:3306/S9HHYQdP81?useSSL=false";
-	private final static String userName = "S9HHYQdP81";
-	private final static String password = "7mR2jSrEgT";
+	private final static String dbHost = "jdbc:mysql://remotemysql.com:3306/O0EMDoktci?useSSL=false";
+	private final static String userName = "O0EMDoktci";
+	private final static String password = "mnsfUm5FI1";
 	private final static String jdbcDriver = "com.mysql.jdbc.Driver";
 	
 	private static Connection connection = null;
